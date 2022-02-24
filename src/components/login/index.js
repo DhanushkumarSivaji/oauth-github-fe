@@ -1,3 +1,4 @@
+/* eslint-disable  */
 import React, { useEffect, useContext } from "react";
 import GithubLogo from "../../assets/githublogo.png";
 import AuthContext from "../../store/context";
@@ -39,7 +40,6 @@ export default function Login(props) {
     if (isAuthenticated) {
       props.history.push("/");
     }
-    // eslint-disable-next-line
   }, [isAuthenticated, props.history]);
 
   return (
