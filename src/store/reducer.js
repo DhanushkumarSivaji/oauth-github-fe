@@ -4,7 +4,6 @@ import {
     LOGIN_FAIL,
     LOGOUT,
     SHOW_LOADER,
-    HIDE_LOADER
   } from './types';
   
   export default (state, action) => {
@@ -30,7 +29,6 @@ import {
           user: null,
         };
       case SHOW_LOADER:
-      case HIDE_LOADER:
         return {
           ...state,
           loading: action.payload
