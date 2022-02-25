@@ -7,7 +7,7 @@ import "./style.css";
 export default function Login(props) {
   const authContext = useContext(AuthContext);
 
-  const { loginSuccess, loginError, isAuthenticated, showLoader, loading } = authContext;
+  const { loginSuccess, loginError, isAuthenticated, showLoader, loading, error } = authContext;
 
   useEffect(() => {
     const url = window.location.href;
@@ -62,15 +62,16 @@ export default function Login(props) {
             <span>Sign in with GitHub</span>
           </a>
              :
-          <button class="btn btn-dark" type="button" disabled>
+          <button className="btn btn-dark" type="button" disabled>
             <span
-              class="spinner-border spinner-border-sm"
+              className="spinner-border spinner-border-sm"
               role="status"
               aria-hidden="true"
             ></span>
             Loading...
           </button>}
           <p className="footer-text">in order to get started</p>
+          { error && <p className="text-danger">Something went wrong please try after somethime</p>}
         </div>
       </div>
     </div>
